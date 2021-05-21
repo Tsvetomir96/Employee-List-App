@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Employees List</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class="box" id="heading">
+         <h1> <%= currentDate %></h1>
+        </div>
+
+        <div class="box" id="heading">
+            <p>Click "Add" button for new employee</p>
+            <p>Click the "checkbox" to delete the employee</p>
+        </div>
+
+        <div class="box">
+
+            <% newListEmployee.forEach(function(employee){ %>
+            <form action="/delete" method="post">
+             <div class="item">
+                <input type="checkbox" name="deleting" value="<%= employee._id %>" onChange="this.form.submit()">
+                 <button name="edit" value="<%= employee._id %>" onChange="this.form.submit()">edit</button>
+                <p>Names: <b><%= employee.employeeNames %></b></p>
+                <p>Address: <b><%= employee.employeeAddress %></b></p>
+                <p>Phone number: <b><%= employee.employeePhone %></b></p>
+                <p>Salary: <b><%= employee.employeeSalary %></b></p>
+             </div>
+            </form>
+            <% }) %>
+
+        <form action="/list" method="post">
+            <input type="text" name="Names" placeholder="Employee names:" autocomplete="off">
+            <input type="text" name="Address" placeholder="Address:" autocomplete="off">
+            <input type="text" name="Phone" placeholder="Phone number:" autocomplete="off">
+            <input type="text" name="Salary" placeholder="Salary:" autocomplete="off">
+
+            <button type="submit" name="button">Add</button>
+        </form>
+            <form action="/">
+                <button type="submit" name="button">Logout</button>
+            </form>
+
+        </div>
+
+    </body>
+</html>
