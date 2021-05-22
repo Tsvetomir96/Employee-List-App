@@ -55,6 +55,10 @@ app.get("/", function (req, res) {
     res.render("home");
 });
 
+app.get("/edit", function (req, res) {
+   res.render("edit")
+});
+
 app.get("/register", function (req, res) {
     res.render("register");
 });
@@ -62,6 +66,7 @@ app.get("/register", function (req, res) {
 app.get("/login", function (req, res) {
     res.render("login");
 });
+
 
 app.get("/list", function (req, res) {
     let today = new Date();

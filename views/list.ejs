@@ -23,7 +23,7 @@
             <form action="/delete" method="post">
              <div class="item">
                 <input type="checkbox" name="deleting" value="<%= employee._id %>" onChange="this.form.submit()">
-                 <button name="edit" value="<%= employee._id %>" onChange="this.form.submit()">edit</button>
+                 <a role="button" href="/edit" name="edit" value="<%= employee._id %>" onChange="this.form.submit()">edit</a>
                 <p>Names: <b><%= employee.employeeNames %></b></p>
                 <p>Address: <b><%= employee.employeeAddress %></b></p>
                 <p>Phone number: <b><%= employee.employeePhone %></b></p>
